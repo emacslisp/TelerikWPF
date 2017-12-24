@@ -24,5 +24,24 @@ namespace wpf_sample
         {
             InitializeComponent();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            MessageBox.Show("Event raised by TextBox");
+            e.Handled = (bool)RadioButton1.IsChecked;
+        }
+
+
+        private void Grid_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            MessageBox.Show("Event raised by Grid");
+            e.Handled = (bool)RadioButton2.IsChecked;
+        }
+
+        private void Window_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            MessageBox.Show("Event raised by Window");
+            e.Handled = (bool)RadioButton3.IsChecked;
+        }
     }
 }

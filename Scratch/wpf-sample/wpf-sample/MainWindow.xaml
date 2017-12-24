@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_sample"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" Height="350" Width="525" TextBoxBase.TextChanged="Window_TextChanged">
+    <Grid  TextBoxBase.TextChanged="Grid_TextChanged">
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="136,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" TextChanged="TextBox_TextChanged"/>
+        <RadioButton x:Name="RadioButton1" Content="Handle Textbox.TextChanged  in Textbox" HorizontalAlignment="Left" Margin="136,106,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="RadioButton2" Content="Handle Textbox.TextChanged  in Grid" HorizontalAlignment="Left" Margin="136,137,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="RadioButton3" Content="Handle Textbox.TextChanged in Window" HorizontalAlignment="Left" Margin="136,167,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
