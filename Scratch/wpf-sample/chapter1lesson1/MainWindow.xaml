@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <DockPanel>
+            <ToolBar DockPanel.Dock="Top" Height="26" Width="276" Name="toolBar1">
+                <Button Name="Button1" Click="Button1_Click">Bold</Button>
+                <Button Name="Button2" Click="Button2_Click">Italic</Button>
+                <Slider Name="Slider1" Minimum="2" Maximum="72" Width="100" ValueChanged="Slider1_ValueChanged" />
+            </ToolBar>
+            <Grid Name="grid1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <ListBox Grid.Column="0" Name="listBox1" SelectionChanged="listBox1_SelectionChanged"></ListBox>
+                <GridSplitter Name="gridSplitter1" Margin="0" Width="5" 
+Grid.Column="1" HorizontalAlignment="Left"/>
+                <RichTextBox Grid.Column="2" Name="richTextBox1"/>
+            </Grid>
+        </DockPanel>
     </Grid>
 </Window>

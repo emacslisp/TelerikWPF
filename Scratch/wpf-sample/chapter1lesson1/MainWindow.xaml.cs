@@ -23,6 +23,38 @@ namespace chapter1lesson1
         public MainWindow()
         {
             InitializeComponent();
+            foreach (FontFamily F in Fonts.SystemFontFamilies)
+            {
+                ListBoxItem l = new ListBoxItem();
+                l.Content = F.ToString();
+                l.FontFamily = F;
+                listBox1.Items.Add(l);
+            }
+        }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            richTextBox1.Selection.ApplyPropertyValue(FontWeightProperty, FontWeights.Bold);
+        }
+
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            richTextBox1.Selection.ApplyPropertyValue(FontStyleProperty, FontStyles.Italic);
+        }
+
+        private void Slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            try
+            {
+                richTextBox1.Selection.ApplyPropertyValue(FontSizeProperty,
+                  Slider1.Value.ToString());
+            }
+            catch { }
+        }
+
+        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            richTextBox1.Selection.ApplyPropertyValue(FontFamilyProperty, ((ListBoxItem)listBox1.SelectedItem).FontFamily);
         }
     }
 }
