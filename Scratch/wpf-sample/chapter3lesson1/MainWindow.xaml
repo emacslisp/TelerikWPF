@@ -1,0 +1,47 @@
+﻿<Window x:Class="chapter3lesson1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chapter3lesson1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Red" Offset="0" />
+            <GradientStop Color="Yellow" Offset=".5" />
+            <GradientStop Color="Lime" Offset="1" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Button Click="button1_Click" Height="23" Margin="30,76,0,0" Name="Button1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="74">
+            <Button.Clip>
+                <!--Since the Button is 100 by 100 pixels, an EllipseGeometry
+with a Center of 50,50 and a RadiusX and RadiusY of 50 will
+clip the button so that it appears circular-->
+                <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+            </Button.Clip>
+            <Button.Background>
+                <SolidColorBrush Color="Red"></SolidColorBrush>
+            </Button.Background> Set Name
+            
+        </Button>
+        <Button Click="button2_Click" Margin="123,76,81,0" Name="Button2" Height="23" VerticalAlignment="Top">
+            <Button.Background>
+                <SolidColorBrush Color="Lime"></SolidColorBrush>
+            </Button.Background> Get Name
+        </Button>
+
+        <TextBox RenderTransformOrigin=".5,.5" Height="21" Margin="30,29,81,0" Name="textBox1" VerticalAlignment="Top" >
+            <TextBox.RenderTransform>
+                <ScaleTransform ScaleX="-1" />
+            </TextBox.RenderTransform>
+        </TextBox>
+
+        <Label Margin="30,124,81,115" Name="label1">
+            <Label.RenderTransform>
+                <SkewTransform AngleX="30" AngleY="20"></SkewTransform>
+            </Label.RenderTransform>
+        </Label>
+    </Grid>
+</Window>
