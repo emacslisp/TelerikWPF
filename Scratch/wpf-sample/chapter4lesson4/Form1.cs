@@ -8,21 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace chapter4lesson3
+namespace chapter4lesson4
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (listView1.SelectedItems.Count > 0)
-            {
-                MessageBox.Show("Your reservation with " + listView1.SelectedItems[0].Text + " is confirmed.");
-            }
         }
     }
 }
